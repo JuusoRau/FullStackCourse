@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant User
+    participant TextField
+    participant SaveButton
+    participant NoteStorage
+    participant Page
+
+    User->>TextField: Write a new note
+    User->>SaveButton: Click "Save"
+    SaveButton->>NoteStorage: Save the new note
+    NoteStorage-->>Page: Confirm note saved
+    Page-->>User: Display new note
