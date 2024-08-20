@@ -1,0 +1,15 @@
+sequenceDiagram
+participant User 
+participant Browser
+participant SPA
+participant Server
+participant Database
+
+User->>SPA: Write a new note in the text field
+User->>SPA: Click "Save"
+SPA->>Server: Send POST request with new note data (JSON)
+Server->>Database: Save new note to the database
+Database-->>Server: Confirm note saved
+Server-->>SPA: Respond with success message and updated notes list (JSON)
+SPA-->>Browser: Update the user interface with the new note
+Browser-->>User: Display updated list of notes
