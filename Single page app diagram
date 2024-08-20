@@ -1,14 +1,13 @@
 sequenceDiagram
-    participant User
-    participant Browser
-    participant Server
-    participant SPA
+ participant Browser
+ participant Server
+ participant SPA
 
-    User->>Browser: Enter URL https://studies.cs.helsinki.fi/exampleapp/spa
-    Browser->>Server: Send HTTP request for the SPA
-    Server-->>Browser: Return HTML, CSS, JavaScript files
-    Browser->>SPA: Load SPA in the browser
-    SPA->>Server: Fetch initial data (e.g., notes)
-    Server-->>SPA: Return initial data (JSON)
-    SPA-->>Browser: Render page content dynamically
-    Browser-->>User: Display SPA to the user
+User->>Browser: Enter URL https://studies.cs.helsinki.fi/exampleapp/spa
+Browser->>Server: Send HTTP request for the SPA
+Server->>Browser: Return HTML, CSS, JavaScript files
+Browser->>SPA: Load SPA in the browser
+SPA->>Server: Fetch initial data
+Server-->>SPA: Return initial data (JSON)
+SPA-->>Browser: Render page content dynamically
+Browser-->>User: Display SPA to the user
