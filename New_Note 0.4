@@ -1,12 +1,19 @@
 sequenceDiagram
-    participant User
-    participant TextField
-    participant SaveButton
-    participant NoteStorage
-    participant Page
+participant User
+participant TextField
+participant SaveButton
+participant NoteStorage
+participant Page
 
-    User->>TextField: Write a new note
-    User->>SaveButton: Click "Save"
-    SaveButton->>NoteStorage: Save the new note
-    NoteStorage-->>Page: Confirm note saved
-    Page-->>User: Display new note
+User->>TextField: Write a new note
+Note right of User: The user writes a note in the text field
+
+User->>SaveButton: Click "Save"
+Note right of the User: The user clicks the "Save" button
+
+SaveButton->>NoteStorage: Save the new note
+NoteStorage-->>Page: Confirm note saved
+Note right of the SaveButton: The note is saved in the storage system
+
+Page-->User: Display new note
+Note right of the Page: The page confirms that the note is saved and displays it to the user
